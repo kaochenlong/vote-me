@@ -1,0 +1,15 @@
+form#candidate_form {
+  input[type="text"], textarea {
+    font-size: 25px;
+  }
+  div {
+    margin: 10px 0;
+  }
+  input[type="submit"] {
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 20px;
+  }
+}
