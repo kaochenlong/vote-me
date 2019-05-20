@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  get '/', to: 'pages#home'
+  # get '/', to: 'candidates#index'
+  root 'candidates#index'
+  resources :candidates
 end
