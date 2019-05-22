@@ -23,6 +23,21 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def edit
+    @candidate = Candidate.find_by(id: params[:id])
+  end
+
+  def update
+    @candidate = Candidate.find_by(id: params[:id])
+
+    if @candidate.update(candidate_params)
+      flash[:notice] = "更新成功"
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def candidate_params

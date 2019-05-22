@@ -1,0 +1,27 @@
+<% if candidate.errors.any? %>
+  <ul>
+  <% candidate.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(candidate, html: {id: 'candidate_form'}) do |f| %>
+  <div>
+    <%= f.label :name, '姓名' %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :age, '年齡' %>
+    <%= f.text_field :age %>
+  </div>
+  <div>
+    <%= f.label :party, '黨派' %>
+    <%= f.text_field :party %>
+  </div>
+  <div>
+    <%= f.label :platform, '政見' %>
+    <%= f.text_area :platform %>
+  </div>
+  <%= f.submit %>
+<% end %>
