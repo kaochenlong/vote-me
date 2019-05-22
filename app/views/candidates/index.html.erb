@@ -2,16 +2,19 @@
 <a href="/candidates/new">新增候選人</a>
 
 <div class="candidate-list">
+
+  <% @candidates.each do |candidate| %>
   <!-- 候選人 start -->
   <div class="candidate-card">
     <div class="avatar">
       <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
     </div>
     <div class="info">
-      <h1>小英(50)</h1>
-      <h2>綠黨</h2>
+      <h1><%= candidate.name %>(<%= candidate.age %>)</h1>
+      <h2><%= candidate.party %></h2>
       <a href="#" class="more-detail">看政見</a>
     </div>
   </div>
   <!-- 候選人 end -->
+  <% end %>
 </div>
