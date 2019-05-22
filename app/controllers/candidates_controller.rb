@@ -13,7 +13,6 @@ class CandidatesController < ApplicationController
       flash[:notice] = '新增成功'
       redirect_to "/"
     else
-      flash[:notice] = '新增失敗'
       render :new
     end
   end
