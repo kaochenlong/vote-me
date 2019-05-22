@@ -1,0 +1,8 @@
+<h1><%= @candidate.name %></h1>
+<ul>
+  <li>年齡：<%= @candidate.age %></li>
+  <li>黨派：<%= @candidate.party %></li>
+  <li>政見：<%= simple_format(@candidate.platform) %></li>
+</ul>
+
+<%= link_to "回候選人列表", root_path %>

@@ -12,7 +12,10 @@
     <div class="info">
       <h1><%= candidate.name %>(<%= candidate.age %>)</h1>
       <h2><%= candidate.party %></h2>
-      <%= link_to "看政見", candidate, class: 'more-detail' %>
+      <%= link_to "政見", candidate, class: 'btn more-detail' %>
+      <%= link_to "投票", '#', class: 'btn vote' %>
+      <%= link_to "修改", '#', class: 'btn update' %>
+      <%= link_to "刪除", '#', class: 'btn destroy' %>
     </div>
   </div>
   <!-- 候選人 end -->

@@ -61,16 +61,21 @@ form#candidate_form {
       }
 
       a {
-        box-sizing: border-box;
-        display: block;
-        width: 100%;
-        background-color: black;
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-        font-size: 20px;
-        text-align: center;
-        border-radius: 4px;
+        &.btn {
+          box-sizing: border-box;
+          display: inline-block;
+          width: 20%;
+          background-color: black;
+          color: white;
+          text-decoration: none;
+          padding: 10px;
+          font-size: 20px;
+          text-align: center;
+          border-radius: 4px;
+        }
+        &.destroy {
+          background-color: red;
+        }
       }
     }
   }
