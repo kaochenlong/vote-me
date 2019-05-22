@@ -38,6 +38,13 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def destroy
+    @candidate = Candidate.find_by(id: params[:id])
+    @candidate.destroy
+    flash[:notice] = "資料已刪除"
+    redirect_to root_path
+  end
+
   private
 
   def candidate_params
