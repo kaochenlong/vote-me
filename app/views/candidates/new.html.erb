@@ -1,6 +1,12 @@
 <h1>新增候選人</h1>
 <a href="/">回候選人列表</a>
 
+<ul>
+<% @candidate.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+</ul>
+
 <%= form_for(@candidate, html: {id: 'candidate_form'}) do |f| %>
   <div>
     <%= f.label :name, '姓名' %>
