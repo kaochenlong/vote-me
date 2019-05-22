@@ -1,5 +1,5 @@
 <h1>候選人列表</h1>
-<a href="/candidates/new">新增候選人</a>
+<%= link_to "新增候選人", new_candidate_path %>
 
 <div class="candidate-list">
 
@@ -12,7 +12,7 @@
     <div class="info">
       <h1><%= candidate.name %>(<%= candidate.age %>)</h1>
       <h2><%= candidate.party %></h2>
-      <a href="#" class="more-detail">看政見</a>
+      <%= link_to "看政見", candidate, class: 'more-detail' %>
     </div>
   </div>
   <!-- 候選人 end -->
