@@ -40,8 +40,15 @@ class CandidatesController < ApplicationController
   end
 
   def vote
-    @candidate.increment(:vote)
-    @candidate.save
+    # 從票的角度來新增
+    # Vote.create(candidate: @candidate, ip_address: request.remote_ip)
+
+    # v = Vote.new
+    # v.candidate = @candidate
+    # v.save
+
+    # 從候選人的角度來新增
+    @candidate.votes.create(ip_address: request.remote_ip)
     redirect_to root_path, notice: '投票完成'
   end
 
