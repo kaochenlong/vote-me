@@ -3,7 +3,7 @@ class CandidatesController < ApplicationController
   before_action :find_candidate, only: [:show, :edit, :update, :destroy, :vote]
 
   def index
-    @candidates = Candidate.all
+    @candidates = Candidate.all.page(params[:page]).per(3)
   end
 
   def show
