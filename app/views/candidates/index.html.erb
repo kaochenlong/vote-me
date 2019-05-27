@@ -1,6 +1,7 @@
 <h1>候選人列表</h1>
 <%= link_to "新增候選人", new_candidate_path %>
 
+<%= say_hello_to("kk") %>
 
 <div class="candidate-list">
   <%= paginate @candidates %>
@@ -16,9 +17,9 @@
       <h1><%= candidate.name %>(<%= candidate.age %>)</h1>
       <h2><%= candidate.party %></h2>
       <%= link_to "政見", candidate, class: 'btn more-detail' %>
-      <%= link_to "投票", vote_candidate_path(candidate), method: "patch", class: 'btn vote', data: { confirm: '確定進行投票?!' } %>
-      <%= link_to "修改", edit_candidate_path(candidate), class: 'btn update' %>
-      <%= link_to "刪除", candidate, method: 'delete', class: 'btn destroy', data: { confirm: '確認刪除?!'} %>
+      <%= link_to "投票", vote_candidate_path(candidate), method: "patch", class: 'btn vote', data: { confirm: '確定進行投票?!' } if user_signed_in? %>
+      <%= link_to "修改", edit_candidate_path(candidate), class: 'btn update' if user_signed_in? %>
+      <%= delete_link_to "刪除", candidate %>
     </div>
   </div>
   <!-- 候選人 end -->

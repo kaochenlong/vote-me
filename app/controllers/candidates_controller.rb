@@ -24,6 +24,7 @@ class CandidatesController < ApplicationController
   end
 
   def edit
+    redirect_to root_path, alert: '需要登入' unless user_signed_in?
   end
 
   def update
