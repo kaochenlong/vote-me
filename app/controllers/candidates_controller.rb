@@ -1,6 +1,6 @@
 class CandidatesController < ApplicationController
-
   before_action :find_candidate, only: [:show, :edit, :update, :destroy, :vote]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @candidates = Candidate.all.page(params[:page]).per(3)
@@ -24,7 +24,6 @@ class CandidatesController < ApplicationController
   end
 
   def edit
-    redirect_to root_path, alert: '需要登入' unless user_signed_in?
   end
 
   def update
