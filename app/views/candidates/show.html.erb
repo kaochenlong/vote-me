@@ -6,3 +6,9 @@
 </ul>
 
 <%= link_to "回候選人列表", root_path %>
+
+<ul>
+<% @candidate.users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+</ul>

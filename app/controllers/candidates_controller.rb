@@ -51,7 +51,7 @@ class CandidatesController < ApplicationController
     # @candidate.votes.create(ip_address: request.remote_ip)
 
     # 從登入者的角度來新增
-    current_user.votes.create(ip_address: request.remote_ip, candidate: @candidate)
+    current_user.votes.create!(ip_address: request.remote_ip, candidate: @candidate)
 
     # 從候選人的角度來新增
     # @candidate.votes.create(ip_address: request.remote_ip, user: current_user)
