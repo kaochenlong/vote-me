@@ -11,10 +11,12 @@ class CandidatesController < ApplicationController
 
   def new
     @candidate = Candidate.new
+    authorize @candidate
   end
 
   def create
     @candidate = Candidate.new(candidate_params)
+    authorize @candidate
 
     if @candidate.save
       redirect_to root_path, notice: '新增成功'
@@ -24,6 +26,7 @@ class CandidatesController < ApplicationController
   end
 
   def edit
+    authorize @candidate
   end
 
   def update
@@ -35,6 +38,8 @@ class CandidatesController < ApplicationController
   end
 
   def destroy
+    authorize @candidate
+
     @candidate.destroy
     redirect_to root_path, notice: "資料已刪除"
   end

@@ -37,11 +37,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'pundit', '~> 2.0', '>= 2.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
+  gem 'faker', '~> 1.9', '>= 1.9.3'
 end
 
 group :development do

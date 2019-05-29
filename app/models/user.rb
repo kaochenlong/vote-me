@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :votes
   has_many :candidates, through: :votes
+
+  def admin?
+    role == 'admin'
+  end
 end
