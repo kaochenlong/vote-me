@@ -8,9 +8,9 @@
 
 <%= simple_form_for(candidate, html: {id: 'candidate_form'}) do |form| %>
   <%= form.input :name, label: '姓名' %>
-  <%= form.input :age, label: '年齡'%>
-  <%= form.input :party, label: '黨派'%>
-  <%= form.input :platform, label: '政見'%>
-  <%= form.file_field "aa"%>
+  <%= form.input :age, label: '年齡' %>
+  <%= form.input :party, label: '黨派' %>
+  <%= form.input :platform, label: '政見' %>
+  <%= form.input :avatar, label: '大頭照' %>
   <%= form.submit %>
 <% end %>
