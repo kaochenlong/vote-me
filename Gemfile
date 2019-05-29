@@ -39,6 +39,7 @@ gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'pundit', '~> 2.0', '>= 2.0.1'
 gem 'simple_form', '~> 4.1'
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
