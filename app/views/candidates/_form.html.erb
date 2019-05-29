@@ -6,22 +6,10 @@
   </ul>
 <% end %>
 
-<%= form_for(candidate, html: {id: 'candidate_form'}) do |f| %>
-  <div>
-    <%= f.label :name, '姓名' %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :age, '年齡' %>
-    <%= f.text_field :age %>
-  </div>
-  <div>
-    <%= f.label :party, '黨派' %>
-    <%= f.text_field :party %>
-  </div>
-  <div>
-    <%= f.label :platform, '政見' %>
-    <%= f.text_area :platform %>
-  </div>
-  <%= f.submit %>
+<%= simple_form_for(candidate, html: {id: 'candidate_form'}) do |form| %>
+  <%= form.input :name, label: '姓名' %>
+  <%= form.input :age, label: '年齡'%>
+  <%= form.input :party, label: '黨派'%>
+  <%= form.input :platform, label: '政見'%>
+  <%= form.submit %>
 <% end %>
