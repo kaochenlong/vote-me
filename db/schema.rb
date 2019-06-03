@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_29_080124) do
+ActiveRecord::Schema.define(version: 2019_06_03_054636) do
 
   create_table "candidates", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2019_05_29_080124) do
     t.datetime "updated_at", null: false
     t.integer "vote", default: 0
     t.string "avatar"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.decimal "price"
+    t.text "description"
+    t.boolean "is_available"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -17,6 +17,17 @@ RSpec.describe Cart, type: :model do
       expect(cart.items.count).to be 2
       expect(cart.items.first.quantity).to be 6
     end
+
+    it "商品可以放到購物車裡，也可以再拿出來。" do
+      p1 = Product.create(title: 'AAA', price: 100)
+      p2 = Product.create(title: 'BBB', price: 50)
+
+      2.times { cart.add_item(p1.id) }
+      3.times { cart.add_item(p2.id) }
+
+      expect(cart.items.first.product).to be_a Product
+      expect(cart.items.first.product.title).to eq 'AAA'
+    end
   end
 
   describe "進階功能" do
