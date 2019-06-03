@@ -28,6 +28,14 @@ class Cart
     end
   end
 
+  def serialize
+    result = items.map { |item|
+      { product_id: item.product_id, quantity: item.quantity }
+    }
+
+    return { items: result }
+  end
+
   private
 
   def xmas?
