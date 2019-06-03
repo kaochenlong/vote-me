@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
   gem 'faker', '~> 1.9', '>= 1.9.3'
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
+  gem 'timecop', '~> 0.9.1'
 end
 
 group :development do
