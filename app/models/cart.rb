@@ -39,12 +39,9 @@ class Cart
   def self.from_hash(hash = nil)
     if hash && hash[:items]
       # 組出充滿 CartItem 的陣列
-      all_items = hash[:items].map { |item|
-        CartItem.new(item[:product_id], item[:quantity])
-      }
-      Cart.new(all_items)
+      new hash[:items].map { |item| CartItem.new(item[:product_id], item[:quantity]) }
     else
-      Cart.new
+      new
     end
   end
 
