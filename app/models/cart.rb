@@ -19,6 +19,18 @@ class Cart
   end
 
   def total_price
-    items.reduce(0) { |sum, item| sum + item.total_price }
+    total = items.reduce(0) { |sum, item| sum + item.total_price }
+
+    if xmas?
+      total *= 0.9
+    else
+      total
+    end
+  end
+
+  private
+
+  def xmas?
+    Time.now.month == 12 && Time.now.day == 25
   end
 end

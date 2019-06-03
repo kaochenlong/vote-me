@@ -40,6 +40,11 @@ RSpec.describe Cart, type: :model do
     end
 
     it "聖誕節全面打 9 折" do
+      t = Time.local(2020, 12, 25, 10, 5, 0)
+      Timecop.travel(t)
+
+      binding.pry
+
       p1 = create(:product, price: 100)
       p2 = create(:product, price: 50)
 
