@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :product do
-    title { "MyString" }
-    price { "9.99" }
-    description { "MyText" }
-    is_available { false }
+    title { Faker::Name.name }
+    price { Faker::Number.between(10, 20) }
+    description { Faker::Lorem.paragraph }
+    is_available { Faker::Boolean.boolean }
   end
 end

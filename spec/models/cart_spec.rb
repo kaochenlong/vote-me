@@ -19,14 +19,14 @@ RSpec.describe Cart, type: :model do
     end
 
     it "商品可以放到購物車裡，也可以再拿出來。" do
-      p1 = Product.create(title: 'AAA', price: 100)
-      p2 = Product.create(title: 'BBB', price: 50)
+      p1 = create(:product)
+      p2 = create(:product)
 
       2.times { cart.add_item(p1.id) }
       3.times { cart.add_item(p2.id) }
 
       expect(cart.items.first.product).to be_a Product
-      expect(cart.items.first.product.title).to eq 'AAA'
+      expect(cart.items.first.product.title).to eq p1.title
     end
   end
 
