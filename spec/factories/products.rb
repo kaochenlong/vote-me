@@ -4,5 +4,9 @@ FactoryBot.define do
     price { Faker::Number.between(10, 20) }
     description { Faker::Lorem.paragraph }
     is_available { Faker::Boolean.boolean }
+
+    trait :free do
+      price { 0 }
+    end
   end
 end
