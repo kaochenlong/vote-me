@@ -30,16 +30,16 @@ class Cart
 
   def serialize
     result = items.map { |item|
-      { product_id: item.product_id, quantity: item.quantity }
+      { "product_id" => item.product_id, "quantity" => item.quantity }
     }
 
-    return { items: result }
+    return { "items" => result }
   end
 
   def self.from_hash(hash = nil)
-    if hash && hash[:items]
+    if hash && hash["items"]
       # 組出充滿 CartItem 的陣列
-      new hash[:items].map { |item| CartItem.new(item[:product_id], item[:quantity]) }
+      new hash["items"].map { |item| CartItem.new(item["product_id"], item["quantity"]) }
     else
       new
     end
