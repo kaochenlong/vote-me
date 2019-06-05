@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get "/history", to: "users#history"
 
+  resources :products, only: [:index, :show]
+
   resources :candidates do
     member do
       patch :vote
