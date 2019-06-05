@@ -2,6 +2,11 @@
   <ul>
     <li><%= link_to "首頁", root_path %></li>
     <% if user_signed_in? %>
+      <% unless current_cart.empty? %>
+        <li>購物車(<%= current_cart.items.count %>)</li>
+        <li>總價：<%= current_cart.total_price %></li>
+        <li><%= link_to '清空', cart_path, method: 'delete' %></li>
+      <% end %>
       <li>hi, <%= current_user.email %></li>
       <li><%= link_to "登出", destroy_user_session_path, method: "delete" %></li>
     <% else %>
