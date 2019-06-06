@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:show, :destroy] do
     collection do
-      put :add, path: 'add/:id'
+      put :add, path: 'add/:id'    # /cart/add/2
+      get :checkout                # /cart/checkout
     end
   end
 
