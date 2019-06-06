@@ -9,17 +9,14 @@
   <%= form.input :note, label: false, placeholder: '備註' %>
 
   <hr>
-  <div id="dropin-container"></div>
+  <div id="payment-form"></div>
 
   <%= form.submit '確認送出' %>
 <% end %>
 
-<script src="https://js.braintreegateway.com/web/dropin/1.18.0/js/dropin.min.js"></script>
+<script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script>
 
 <script>
-  braintree.dropin.create({
-    authorization: '<%= @token %>',
-    container: '#dropin-container'
-  }, function (createErr, instance) {
-  });
+  var clientToken = "<%= @token %>";
+  braintree.setup(clientToken, "dropin", { container: "payment-form" });
 </script>
