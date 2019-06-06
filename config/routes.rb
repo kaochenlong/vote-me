@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show]
 
+  resources :orders, only: [:index, :show, :new, :create]
   resource :cart, only: [:show, :destroy] do
     collection do
       put :add, path: 'add/:id'    # /cart/add/2
