@@ -38,7 +38,7 @@ gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 gem 'rails_admin', '~> 1.4', '>= 1.4.2'
 gem 'paranoia', '~> 2.4', '>= 2.4.2'
 gem "braintree", "~> 2.96.0"
-
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

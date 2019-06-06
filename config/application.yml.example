@@ -1,0 +1,11 @@
+development:
+  paypal_environment: 'sandbox'
+  paypal_merchant_id: 'jwb8xzddrxx8'
+  paypal_public_key: '2ntx664zr9qqcg9'
+  paypal_private_key: '5d360837b52855a174eeb64864aa9c6d'
+
+production:
+  paypal_environment: 'production'
+  paypal_merchant_id: 'jwb8xzmwgrxx8'
+  paypal_public_key: '2ntx664gzr9qqcg9'
+  paypal_private_key: '5d360837b52855a174eeb64864aa9c6d'
