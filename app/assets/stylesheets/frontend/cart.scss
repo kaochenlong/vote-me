@@ -2,4 +2,22 @@
   width: 100%;
   font-size: 20px;
   border: 1px dotted lightgray;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: blue;
+}
+
+.btn-danger {
+  background-color: red;
 }
