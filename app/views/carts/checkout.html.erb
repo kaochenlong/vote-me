@@ -1,6 +1,6 @@
 <h1>結帳</h1>
 
-<%= render 'cart' %>
+<%= render 'carts/cart' %>
 
 <%= simple_form_for(@order) do |form| %>
   <%= form.input :recipient, label: false, placeholder: '請輸入收件人姓名' %>
