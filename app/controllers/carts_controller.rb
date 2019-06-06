@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   include CartsHelper
+  include Payable
 
   before_action :authenticate_user!
 
@@ -15,6 +16,7 @@ class CartsController < ApplicationController
 
   def checkout
     @order = Order.new
+    @token = gateway.client_token.generate
   end
 
   def destroy

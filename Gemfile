@@ -37,12 +37,13 @@ gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 gem 'rails_admin', '~> 1.4', '>= 1.4.2'
 gem 'paranoia', '~> 2.4', '>= 2.4.2'
+gem "braintree", "~> 2.96.0"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
-  gem 'faker', '~> 1.9', '>= 1.9.3'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
   gem 'faker', '~> 1.9', '>= 1.9.3'
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'

@@ -1,13 +1,11 @@
 class OrdersController < ApplicationController
   include CartsHelper
+  include Payable
 
   before_action :authenticate_user!
 
   def create
     # 建立訂單
-    # @order = Order.new(order_params)
-    # @order.user = current_user
-
     @order = current_user.orders.build(order_params)
 
     current_cart.items.each do |item|
@@ -18,6 +16,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       # 刷卡
+
       # 清空購物車
       redirect_to products_path, notice: '親，感謝!'
     else

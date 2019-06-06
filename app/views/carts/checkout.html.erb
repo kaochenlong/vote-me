@@ -7,5 +7,19 @@
   <%= form.input :phone, label: false, placeholder: '市話或行動電話' %>
   <%= form.input :address, label: false, placeholder: '收件人地址' %>
   <%= form.input :note, label: false, placeholder: '備註' %>
+
+  <hr>
+  <div id="dropin-container"></div>
+
   <%= form.submit '確認送出' %>
 <% end %>
+
+<script src="https://js.braintreegateway.com/web/dropin/1.18.0/js/dropin.min.js"></script>
+
+<script>
+  braintree.dropin.create({
+    authorization: '<%= @token %>',
+    container: '#dropin-container'
+  }, function (createErr, instance) {
+  });
+</script>
