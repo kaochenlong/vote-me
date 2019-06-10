@@ -6,7 +6,7 @@ class Order < ApplicationRecord
 
   include AASM
 
-  aasm do
+  aasm column: 'state' do
     state :pending, initial: true
     state :paid, :prepared, :delivered, :refunded, :cancelled
 
@@ -24,6 +24,9 @@ class Order < ApplicationRecord
 
     event :deliver do
       transitions from: :prepared, to: :delivered
+      after do
+        # 發簡訊
+      end
     end
 
     event :refund do
