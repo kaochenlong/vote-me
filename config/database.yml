@@ -14,5 +14,3 @@ test:
 production:
   <<: *default
   database: vote_me_production
-  username: aabb
-  password: <%= ENV['AABB_DATABASE_PASSWORD'] %>
