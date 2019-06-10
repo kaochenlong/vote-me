@@ -4,7 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.0'
 
 gem 'rails', '~> 5.2.3'
-gem 'sqlite3'
+# gem 'sqlite3'
+gem 'pg', '~> 1.1', '>= 1.1.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'

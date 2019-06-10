@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_06_06_040835) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "candidates", force: :cascade do |t|
     t.string "name"
     t.integer "age"
@@ -24,8 +27,8 @@ ActiveRecord::Schema.define(version: 2019_06_06_040835) do
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.integer "order_id"
-    t.integer "product_id"
+    t.bigint "order_id"
+    t.bigint "product_id"
     t.integer "quantity"
     t.decimal "strike_price"
     t.datetime "created_at", null: false
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_06_06_040835) do
     t.text "note"
     t.string "state"
     t.datetime "deleted_at"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
@@ -72,13 +75,17 @@ ActiveRecord::Schema.define(version: 2019_06_06_040835) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "candidate_id"
+    t.bigint "candidate_id"
     t.string "ip_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["candidate_id"], name: "index_votes_on_candidate_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "products"
+  add_foreign_key "orders", "users"
+  add_foreign_key "votes", "candidates"
 end
