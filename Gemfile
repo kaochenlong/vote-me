@@ -33,7 +33,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'pundit', '~> 2.0', '>= 2.0.1'
-gem 'simple_form', '~> 4.1'
+gem 'simple_form', '~> 5.0'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 gem 'rails_admin', '~> 1.4', '>= 1.4.2'
